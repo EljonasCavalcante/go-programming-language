@@ -1,23 +1,35 @@
 package main
 
 import "fmt"
+import "os"
+// import "net/http"
 
 func main() {
-    exibeIntruducao()
-    exibeMenu()
+    // exibeIntruducao()
+    // exibeMenu()
+    nome, idade := devolveNomeEIdade()
+    fmt.Println(nome, "E tenho", idade)
+
     comando := lerComando()
 // local para colocar o "if" que está comentado em baixo
     switch comando {
         case 1:
-            fmt.Println("Monitorando...")
+            iniciarMonitoriamento()            
         case 2 : 
             fmt.Println("Exibindo Logs...")
         case 0:
             fmt.Println("Saindo do programa...")
+            os.Exit(0)
         default:
             fmt.Println("Não conheço este comando")
-
+            os.Exit(-1) // mostra que aconteceu um erro
     }
+}
+
+func devolveNomeEIdade() (string, int) {
+    nome := "Jonas"
+    idade := 24
+    return nome, idade
 }
 
 func exibeIntruducao() {
@@ -38,6 +50,12 @@ func lerComando() int {
     fmt.Scan(&comandoLido)
     fmt.Println("O comando escolhido foi", comandoLido)
     return comandoLido
+}
+
+func iniciarMonitoriamento() {
+    fmt.Println("Iniciar Monitoriamento...")
+    // site := "https://www.alura.com.br"
+    // resp,err := http.Get(site)
 }
 
 // colocar em cima para testar
