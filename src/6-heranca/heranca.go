@@ -18,4 +18,6 @@ func main() {
 	fmt.Println("Herança")
 	p1 := pessoa{"João", "Pedro", 20, 178}
 	fmt.Println(p1)
+	e1 := estudante{p1, "Engenheria", "USP"}
+	fmt.Println(e1)
 }
