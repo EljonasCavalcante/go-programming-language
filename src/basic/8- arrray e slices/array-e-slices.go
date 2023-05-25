@@ -28,4 +28,12 @@ func main() {
 	array2[1] = "POSICAO ALTERADA"
 	fmt.Println(slice2) //[POSICAO ALTERADA posição2]
 
+	//ARRAY INTERNOS
+	fmt.Println("------------")
+	//func make(t Type, size ...IntegerType)
+	slice3 := make([]float32, 10, 15)
+	fmt.Println(slice3)      //[0 0 0 0 0 0 0 0 0 0]
+	fmt.Println(len(slice3)) //length 10
+	fmt.Println(cap(slice3)) //capacidade 15
+
 }
