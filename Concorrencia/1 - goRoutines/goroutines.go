@@ -6,9 +6,10 @@ import (
 )
 
 func main() {
-	go escrever("teste")
-	escrever("Programando em go!")
+	go escrever("Olá Mundo!") // goroutine
+	escrever("Programando em Go!")
 }
+
 func escrever(texto string) {
 	for {
 		fmt.Println(texto)
